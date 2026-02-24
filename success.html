@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оплата прошла — Оксана</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f4f2f7; --text:#121212; --muted:#5f5f66; --line:rgba(18,18,18,.10);
+      --shadow:0 14px 36px rgba(0,0,0,.10); --radius:18px; --max:900px;
+      --wb1:#6A11CB; --wb2:#FF2D95; --btnText:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text);
+      background: radial-gradient(900px 520px at 50% -10%, #ffffff 0%, #f7f2fb 55%, var(--bg) 100%);}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 16px 60px}
+    .glass{background:rgba(255,255,255,.86); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px;}
+    h1{margin:0 0 10px; font-size:28px; letter-spacing:-.4px}
+    p{margin:0; color:var(--muted); line-height:1.65}
+    .btn{display:inline-flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:12px;
+      font-weight:800; letter-spacing:.45px; text-transform:uppercase;
+      background: linear-gradient(135deg, var(--wb1), var(--wb2)); color:var(--btnText);
+      border: 1px solid rgba(0,0,0,.14); text-decoration:none; margin-top:16px;}
+    .small{margin-top:12px; font-size:12px}
+    .small a{border-bottom:1px dashed rgba(0,0,0,.35); color:inherit; text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="glass">
+      <h1>Оплата прошла ✅</h1>
+      <p>Спасибо! Нажмите кнопку ниже, чтобы написать Оксане в Telegram и получить следующий шаг.</p>
+      <a class="btn" id="tgBtn" href="https://t.me/OksanaKli19" target="_blank" rel="noopener">Написать Оксане</a>
+      <p class="small" style="color:var(--muted);">Если кнопка не открылась: <a href="https://t.me/OksanaKli19" target="_blank" rel="noopener">https://t.me/OksanaKli19</a></p>
+      <p class="small" style="color:var(--muted);"><a href="/index.html">Вернуться на сайт</a></p>
+    </div>
+  </div>
+
+  <script>
+    const tg = "https://t.me/OksanaKli19";
+    const p = new URLSearchParams(location.search);
+    const tariff = p.get("tariff");
+
+    const map = {
+      card: "Обучение «Карточка товара» (999 ₽)",
+      wb0: "Курс «Бизнес на WB с нуля» (56 000 ₽)",
+      self: "Самостоятельный тариф (9 900 ₽)",
+      consult: "Консультация (14 000 ₽)",
+      indiv: "Индивидуальное обучение (169 000 ₽)"
+    };
+
+    const text = encodeURIComponent(
+      "Здравствуйте! Я оплатил(а): " + (map[tariff] || "услугу/курс") + ".\nПодскажите, пожалуйста, следующий шаг."
+    );
+
+    document.getElementById("tgBtn").href = tg + "?text=" + text;
+  </script>
+</body>
+</html>
