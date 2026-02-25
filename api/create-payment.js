@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const { tariff } = req.body || {};
 
     const tariffs = {
-      card:    { amount: "999.00",    description: "Обучение «Карточка товара»" },
+      card:    { amount: "1999.00",   description: "Старт на WB без ошибок" },
       wb0:     { amount: "56000.00",  description: "Курс «Бизнес на WB с нуля»" },
       self:    { amount: "9900.00",   description: "Самостоятельный тариф" },
       consult: { amount: "14000.00",  description: "Консультация" },
