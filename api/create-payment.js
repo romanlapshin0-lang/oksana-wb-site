@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
     const tariffs = {
       card:    { amount: "1999.00",   description: "Старт на WB без ошибок" },
-      wb0:     { amount: "56000.00",  description: "Курс «Бизнес на WB с нуля»" },
+      wb0:     { amount: "69000.00",  description: "Курс «Бизнес на WB с нуля»" },
       self:    { amount: "9900.00",   description: "Самостоятельный тариф" },
       consult: { amount: "14000.00",  description: "Консультация" },
       indiv:   { amount: "169000.00", description: "Индивидуальное обучение" }
